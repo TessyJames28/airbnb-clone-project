@@ -67,61 +67,45 @@ The backend for the Airbnb Clone project is designed to provide a robust and sca
      - A property can have many reviews
 
 3. `Booking`
-   Fields:
+   - Fields:
 
-id: Unique identifier for the booking
+     - `id:` Unique identifier for the booking
+     - `user_id:` Foreign key to User (guest)
+     - `property_id:` Foreign key to Property
+     - `start_date:` Check-in date
+     - `end_date:` Check-out date
 
-user_id: Foreign key to User (guest)
+   - Relationships:
 
-property_id: Foreign key to Property
+     - A booking belongs to one property
+     - A booking is made by one user
+     - A booking can have one payment record
 
-start_date: Check-in date
+4. `Payment`
+   - Fields:
 
-end_date: Check-out date
+     - `id:` Unique identifier for the payment
+     - `booking_id:` Foreign key to Booking
+     - `amount:` Payment amount
+     - `status:` e.g., pending, completed, failed
+     - `payment_method:` e.g., credit card, PayPal
 
-Relationships:
+   - Relationships:
 
-A booking belongs to one property
+     - A payment is linked to one booking
+     - A user indirectly relates to payment via their bookings
 
-A booking is made by one user
+5. `Review`
+   - Fields:
 
-A booking can have one payment record
+     - `id:` Unique identifier for the review
+     - `user_id:` Foreign key to User (reviewer)
+     - `property_id:` Foreign key to Property
+     - `rating:` e.g., 1–5 stars
+     - `comment:` Text content of the review
 
-4. Payment
-Fields:
+   - Relationships:
 
-id: Unique identifier for the payment
-
-booking_id: Foreign key to Booking
-
-amount: Payment amount
-
-status: e.g., pending, completed, failed
-
-payment_method: e.g., credit card, PayPal
-
-Relationships:
-
-A payment is linked to one booking
-
-A user indirectly relates to payment via their bookings
-
-5. Review
-Fields:
-
-id: Unique identifier for the review
-
-user_id: Foreign key to User (reviewer)
-
-property_id: Foreign key to Property
-
-rating: e.g., 1–5 stars
-
-comment: Text content of the review
-
-Relationships:
-
-A review is left by one user
-
-A review is linked to one property
+     - A review is left by one user
+     - A review is linked to one property
 
