@@ -141,3 +141,113 @@ The backend for the Airbnb Clone project is designed to provide a robust and sca
 7. **Database Optimizations**
    - ***Indexing:*** Implement indexes for fast retrieval of frequently accessed data.
    - ***Caching:*** Use caching strategies to reduce database load and improve performance.
+
+
+## API Security
+### Authentication
+Verifies a user's identity using credentials (e.g., email and password, or third-party OAuth like Google).
+This helps to prevents unauthorized access to user accounts, personal data, and prevents impersonation
+ attacks.
+
+**Implementation:**
+---
+
+- Use secure password hashing (e.g., bcrypt or Argon2)
+- Support JWT (JSON Web Tokens) or session-based auth
+- Optional: Implement multi-factor authentication (MFA)
+
+
+
+
+2. Authorization
+What it is:
+Ensures users can only access or modify resources they own or are permitted to interact with.
+
+Implementation:
+
+Role-based access control (e.g., host vs guest)
+
+Middleware checks to restrict access to endpoints
+
+Why it's crucial:
+Protects data integrity by preventing one user from editing another user’s profile, property, or bookings.
+
+3. Rate Limiting
+What it is:
+Restricts the number of requests a user can make in a given timeframe.
+
+Implementation:
+
+Apply rate limiting middleware to sensitive endpoints (e.g., login, booking, review)
+
+Use token bucket or sliding window algorithms
+
+Why it's crucial:
+Mitigates brute force attacks and abuse (e.g., spamming the booking or login API).
+
+4. Input Validation & Sanitization
+What it is:
+Ensures incoming data is safe and well-formed.
+
+Implementation:
+
+Validate request bodies and query parameters
+
+Sanitize inputs to prevent SQL injection and XSS
+
+Why it's crucial:
+Prevents common web vulnerabilities that could lead to data leakage, account takeover, or system compromise.
+
+5. Secure Payments
+What it is:
+Protects sensitive financial information during transactions.
+
+Implementation:
+
+Use HTTPS for all traffic
+
+Integrate with trusted third-party payment processors (e.g., Stripe, PayPal)
+
+Never store raw credit card information on your servers
+
+Why it's crucial:
+Minimizes the risk of financial fraud and ensures compliance with PCI DSS standards.
+
+6. Data Encryption
+What it is:
+Protects data in transit and at rest using cryptography.
+
+Implementation:
+
+Enable TLS (HTTPS) for all communications
+
+Encrypt sensitive fields in the database (e.g., personal info)
+
+Why it's crucial:
+Ensures attackers can’t read intercepted or stolen data.
+
+7. Audit Logging
+What it is:
+Tracks and logs user activities and system events.
+
+Implementation:
+
+Record login attempts, updates, and deletions
+
+Monitor logs for anomalies
+
+Why it's crucial:
+Enables incident response and helps detect unauthorized behavior or security breaches.
+
+8. CORS and CSRF Protection
+What it is:
+Prevents cross-origin and cross-site request attacks.
+
+Implementation:
+
+Set proper CORS headers
+
+Use CSRF tokens for state-changing operations (for session-based apps)
+
+Why it's crucial:
+Blocks unauthorized actions from malicious websites or scripts.
