@@ -149,7 +149,7 @@ Verifies a user's identity using credentials (e.g., email and password, or third
 This helps to prevents unauthorized access to user accounts, personal data, and prevents impersonation
  attacks.
 
-####Implementation
+#### Implementation
 
 - Use secure password hashing (e.g., bcrypt or Argon2)
 - Support JWT (JSON Web Tokens) or session-based auth
@@ -216,3 +216,25 @@ unauthorized behavior or security breaches.
 
 - Record login attempts, updates, and deletions
 - Monitor logs for anomalies
+
+
+## CI/CD Pipeline
+CI/CD (Continuous Integration / Continuous Deployment) pipelines are automated workflows that build, test, 
+and deploy code every time changes are pushed to the codebase.
+
+### Why CI/CD Is Important for the Project
+- **Faster Development Cycles:** Automates testing and deployment, reducing manual effort and speeding up 
+feature releases.
+- **Early Bug Detection:** Automatically runs tests on new code to catch bugs before they reach production.
+- **Improved Code Quality:** Enforces coding standards and consistency with tools like linters and static 
+analysis.
+- **Reliable Deployment:** Reduces human errors by automating deployments to staging or production environments.
+- **Team Collaboration:** Makes it easier for multiple developers to contribute without breaking the project.
+
+#### Tools for CI/CD
+- **GitHub Actions** – Automates build, test, and deployment workflows directly from GitHub repository.
+- **Docker** – Packages the application into containers for consistent environments across dev, staging, and 
+production.
+- **Docker Compose** – Useful for managing multi-service applications like the app backend and database.
+- **Heroku / AWS / Render / DigitalOcean** – For hosting and deploying the application.
+- **PostgreSQL / MySQL** – As part of the Docker setup for database testing.
