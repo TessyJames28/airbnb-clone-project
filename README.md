@@ -34,3 +34,94 @@ The backend for the Airbnb Clone project is designed to provide a robust and sca
  spotting functional and non-functional defects for improvement. They evaluate an application from different
  angles—be it functionality, usability, security, or performance (hence, many types of testing). 
 
+
+## Database Design
+1. `User`
+   - Fields:
+
+     - `id:` Unique identifier for the user
+     - `name:` Full name
+     - `email:` Used for login and communication
+     - `password_hash:` Encrypted password for authentication
+     - `is_host:` Boolean indicating if user can list properties
+
+   - Relationships:
+     - A user can own multiple properties
+     - A user can make multiple bookings
+     - A user can leave multiple reviews
+     - A user can make multiple payments
+
+2. `Property`
+   - Fields:
+
+     - `id:` Unique identifier for the property
+     - `owner_id:` Foreign key to User
+     - `title:` Name or headline of the listing
+     - `location:` City, address, or coordinates
+     - `price_per_night:` Cost per night
+
+   - Relationships:
+
+     - A property belongs to one user (host)
+     - A property can have many bookings
+     - A property can have many reviews
+
+3. `Booking`
+   Fields:
+
+id: Unique identifier for the booking
+
+user_id: Foreign key to User (guest)
+
+property_id: Foreign key to Property
+
+start_date: Check-in date
+
+end_date: Check-out date
+
+Relationships:
+
+A booking belongs to one property
+
+A booking is made by one user
+
+A booking can have one payment record
+
+4. Payment
+Fields:
+
+id: Unique identifier for the payment
+
+booking_id: Foreign key to Booking
+
+amount: Payment amount
+
+status: e.g., pending, completed, failed
+
+payment_method: e.g., credit card, PayPal
+
+Relationships:
+
+A payment is linked to one booking
+
+A user indirectly relates to payment via their bookings
+
+5. Review
+Fields:
+
+id: Unique identifier for the review
+
+user_id: Foreign key to User (reviewer)
+
+property_id: Foreign key to Property
+
+rating: e.g., 1–5 stars
+
+comment: Text content of the review
+
+Relationships:
+
+A review is left by one user
+
+A review is linked to one property
+
