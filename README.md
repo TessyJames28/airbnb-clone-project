@@ -22,3 +22,15 @@ The backend for the Airbnb Clone project is designed to provide a robust and sca
 - **Docker:** Containerization tool for consistent development and deployment environments.
 - **CI/CD Pipelines:** Automated pipelines for testing and deploying code changes.
 
+
+## Team Roles and Responsibilities
+- **Backend Developer:** Responsible for implementing API endpoints, database schemas, and business logic and
+ solves any technical problems emerging during the development lifecycle.
+- **Database Administrator:** Manages database design, indexing, and optimizations.
+- **DevOps Engineer:** Handles deployment, monitoring, and scaling of the backend services and facilitates
+ cooperation between development and operations teams. The DevOp builds continuous integration and continuous
+ delivery (CI/CD) pipelines for faster delivery.
+- **QA Engineer:** Ensures the backend functionalities are thoroughly tested and meet quality standards by
+ spotting functional and non-functional defects for improvement. They evaluate an application from different
+ angles—be it functionality, usability, security, or performance (hence, many types of testing). 
+
